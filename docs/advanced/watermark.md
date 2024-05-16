@@ -17,7 +17,7 @@ CREATE TABLE t (
 ) APPEND ONLY;
 ```
 
-那么 RisingWave 是利用水位线的呢？
+那么 RisingWave 是如何利用水位线的呢？
 
 一方面，RisingWave 的流处理引擎在一些查询中可以借助水位线进行状态清理，控制内部计算状态的大小，避免内部状态的无限制的增长而导致性能下降。不过注意到，这里所说的状态清理仅限于计算引擎内部的状态，不会影响物化视图内部的数据。关于物化视图内数据的清理请看[`temporal filter`](./temporal_filter.md).
 
